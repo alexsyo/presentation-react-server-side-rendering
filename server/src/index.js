@@ -3,7 +3,9 @@ import path from 'path';
 import {
   basic as renderBasic,
   redux as renderRedux,
-  preloadedState as renderPreloadedState
+  preloadedState as renderPreloadedState,
+  circularJson as renderCircularJson,
+  basicRouter as renderBasicRouter
 } from './render';
 
 const app = express();
@@ -21,13 +23,25 @@ const app = express();
 // #endregion
 
 // #region 3 - server side rendering with preloaded state
-app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
-app.get('/*', (req, res) => {
-  res.send(renderPreloadedState())
-});
+// app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
+// app.get('/*', (req, res) => {
+//   res.send(renderPreloadedState())
+// });
 // #endregion
 
+// #region 4 - server side rendering with circular json
+// app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
+// app.get('/*', (req, res) => {
+//   res.send(renderCircularJson())
+// });
+// #endregion
 
+// #region 5 - server side rendering with router
+app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
+app.get('/*', (req, res) => {
+  res.send(renderBasicRouter(req))
+});
+// #endregion
 
 
 app.listen(3000);

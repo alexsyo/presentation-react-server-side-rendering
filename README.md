@@ -7,10 +7,12 @@ progression:
 - lifecycle
 - redux - basic
 - redux - preloaded state
-- ...
+- redux - circular json
+- router - basic
 
 elements to tweak
 
 - server/index.js - server entrypoint
 - client/src/index.js - client entrypoint
-- client/src/component/App/index.js - App component, used both on the clieant and on the server side
+- client/src/component/App/index.js - App component, used both on the client and on the server side
+- client/src/redux/reducers/profile/index.js - circular initialstate on reducer

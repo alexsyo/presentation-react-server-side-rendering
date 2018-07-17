@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+
 import App from './components/App';
 import store from './redux/store';
 
@@ -13,10 +15,19 @@ import store from './redux/store';
 // #endregion
 
 // #region 2 - Redux
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <App />
+//   </Provider>,
+//   document.getElementById('root')
+// );
+// #endregion
+
+// #region 3 - Router
 ReactDOM.render(
-  <Provider store={store}>
+  <BrowserRouter>
     <App />
-  </Provider>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 // #endregion

@@ -16,6 +16,10 @@ const initialState = {
   gas: 0
 }
 
+// #region circular json
+initialState.circularField = initialState
+// #endregion
+
 export default (state = initialState, action) => {
   switch (action.type) {
     case ADD_ENERGY:
