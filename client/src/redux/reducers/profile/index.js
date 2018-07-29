@@ -17,7 +17,7 @@ const initialState = {
 }
 
 // #region circular json
-initialState.circularField = initialState
+// initialState.circularField = initialState
 // #endregion
 
 export default (state = initialState, action) => {

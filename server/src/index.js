@@ -12,8 +12,8 @@ import {
 const app = express();
 
 // #region 1 - client side rendering
-// app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
-// app.get('/*', express.static(path.join(__dirname, '../../client/dist')));
+app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
+app.get('/*', express.static(path.join(__dirname, '../../client/dist')));
 // #endregion
 
 // #region 2 - basic server side rendering
@@ -45,10 +45,10 @@ const app = express();
 // #endregion
 
 // #region 6 - server side rendering with router and redux
-app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
-app.get('/*', (req, res) => {
-  res.send(renderRouterRedux(req))
-});
+// app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
+// app.get('/*', (req, res) => {
+//   res.send(renderRouterRedux(req))
+// });
 // #endregion
 
 

@@ -6,7 +6,7 @@ import RouterBasic from './Router/Basic';
 import RouterRedux from './RouterRedux'
 
 // #region 1 - Basic application
-// const App = () => <Basic />
+const App = () => <Basic />
 // #endregion
 
 // #region 2 - LifeCycle application
@@ -22,7 +22,7 @@ import RouterRedux from './RouterRedux'
 // #endregion
 
 // #region 5 - Router redux application
-const App = () => <RouterRedux />
+// const App = () => <RouterRedux />
 // #endregion
 
 export default App;

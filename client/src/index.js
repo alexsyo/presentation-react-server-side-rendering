@@ -8,10 +8,10 @@ import store from './redux/store';
 
 
 // #region 1 - Basic
-// ReactDOM.render(
-//   <App />,
-//   document.getElementById('root')
-// );
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
 // #endregion
 
 // #region 2 - Redux
@@ -33,13 +33,13 @@ import store from './redux/store';
 // #endregion
 
 // #region 3 - Router
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   </Provider>,
+//   document.getElementById('root')
+// );
 // #endregion
 
