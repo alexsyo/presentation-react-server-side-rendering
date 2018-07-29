@@ -18,10 +18,10 @@ elements to tweak
 - client/src/component/App/index.js - App component, used both on the client and on the server side
 - client/src/redux/reducers/profile/index.js - circular initialstate on reducer
 
-### build
+## build
 
 ```yarn build```
 
-### run
+## run
 
 ```yarn nodemon server/dist```
