@@ -10,7 +10,11 @@ export default (html, preloadedState) => {
       <body>
         <div id="root">${html}</div>
         <script>
-          window.__PRELOADED_STATE__ = ${util.inspect(preloadedState, {showHidden: false, depth: null, maxArrayLength: null, breakLength: Infinity}).replace(/</g, '\\u003c')}
+          window.__PRELOADED_STATE__ = ${
+            util.inspect(preloadedState, {showHidden: false, depth: null, maxArrayLength: null, breakLength: Infinity})
+              .replace(/</g, '\\u003c')
+              .replace(/\[Circular\]/g, 'null')
+          }
         </script>
         <script src="/static/bundle.js"></script>
       </body>

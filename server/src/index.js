@@ -5,7 +5,8 @@ import {
   redux as renderRedux,
   preloadedState as renderPreloadedState,
   circularJson as renderCircularJson,
-  basicRouter as renderBasicRouter
+  basicRouter as renderBasicRouter,
+  routerRedux as renderRouterRedux
 } from './render';
 
 const app = express();
@@ -37,9 +38,16 @@ const app = express();
 // #endregion
 
 // #region 5 - server side rendering with router
+// app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
+// app.get('/*', (req, res) => {
+//   res.send(renderBasicRouter(req))
+// });
+// #endregion
+
+// #region 6 - server side rendering with router and redux
 app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
 app.get('/*', (req, res) => {
-  res.send(renderBasicRouter(req))
+  res.send(renderRouterRedux(req))
 });
 // #endregion
 

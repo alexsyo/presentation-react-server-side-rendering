@@ -2,7 +2,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { StaticRouter } from 'react-router-dom';
+import { StaticRouter, matchPath } from 'react-router-dom';
 
 import basicTemplate from './templates/basic';
 import reduxTemplate from './templates/redux';
@@ -10,6 +10,7 @@ import reduxCircularTemplate from './templates/redux-circular';
 
 import reducers from '../../client/src/redux/reducers';
 import middlewares from '../../client/src/redux/middlewares';
+import routes from '../../client/src/components/App/RouterRedux/routes';
 import { initializeProfile } from '../../client/src/redux/reducers/profile';
 import App from '../../client/src/components/App';
 
@@ -86,6 +87,38 @@ export const basicRouter = (req) => {
   );
 
   return basicTemplate(html);
+}
+// #endregion
+
+// #region 6 - rendering with router and redux
+export const routerRedux = (req) => {
+  const store = createStore(reducers, {}, middlewares);
+  const context = {};
+
+  routes(store).find((route) => {
+    const match = matchPath(req.path, route);
+
+    if(match && route.loadData) {
+      route.loadData();
+    }
+
+    if(match) return route;
+  });
+
+  const html = renderToString(
+    <Provider store={store}>
+      <StaticRouter
+        location={req.url}
+        context={context}
+      >
+        <App />
+      </StaticRouter>
+    </Provider>
+  );
+
+  const initialState = store.getState();
+
+  return reduxCircularTemplate(html, initialState);
 }
 // #endregion
 
