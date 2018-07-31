@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch, NavLink } from "react-router-dom";
 import routes from './routes';
 
-const WelcomeComponent = () => <div>You shine</div>
-const EnergyComponent = () => <div>Energy rocks</div>
-const GasComponent = () => <div>Gas rulez</div>
-
 class RouterRedux extends Component {
   render() {
     return (
