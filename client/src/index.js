@@ -32,7 +32,7 @@ ReactDOM.render(
 // );
 // #endregion
 
-// #region 3 - Router
+// #region 3 - Router Redux
 // ReactDOM.render(
 //   <Provider store={store}>
 //     <BrowserRouter>
