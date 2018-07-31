@@ -19,7 +19,7 @@ app.get('/*', express.static(path.join(__dirname, '../../client/dist')));
 // #region 2 - basic server side rendering
 // app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
 // app.get('/*', (req, res) => {
-//   res.send(renderRedux())
+//   res.send(renderBasic())
 // });
 // #endregion
 
