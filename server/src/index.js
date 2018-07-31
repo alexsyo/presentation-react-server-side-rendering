@@ -23,28 +23,35 @@ app.get('/*', express.static(path.join(__dirname, '../../client/dist')));
 // });
 // #endregion
 
-// #region 3 - server side rendering with preloaded state
+// #region 3 - server side rendering with redux
+// app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
+// app.get('/*', (req, res) => {
+//   res.send(renderRedux())
+// });
+// #endregion
+
+// #region 4 - server side rendering with preloaded state
 // app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
 // app.get('/*', (req, res) => {
 //   res.send(renderPreloadedState())
 // });
 // #endregion
 
-// #region 4 - server side rendering with circular json
+// #region 5 - server side rendering with circular json
 // app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
 // app.get('/*', (req, res) => {
 //   res.send(renderCircularJson())
 // });
 // #endregion
 
-// #region 5 - server side rendering with router
+// #region 6 - server side rendering with router
 // app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
 // app.get('/*', (req, res) => {
 //   res.send(renderBasicRouter(req))
 // });
 // #endregion
 
-// #region 6 - server side rendering with router and redux
+// #region 7 - server side rendering with router and redux
 // app.use('/static', express.static(path.join(__dirname, '../../client/dist')));
 // app.get('/*', (req, res) => {
 //   res.send(renderRouterRedux(req))
